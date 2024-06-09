@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("webdersi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74a8ceee5dada539e39d2c3b10af67867b2d3996")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d60b700044c24493147e7938d670e6885439b51e")]
 [assembly: System.Reflection.AssemblyProductAttribute("webdersi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("webdersi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

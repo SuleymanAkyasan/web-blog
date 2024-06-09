@@ -17,7 +17,7 @@ namespace webdersi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login( LoginViewModel loginViewModel)
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
         {
             var user = await _context.Set<User>().FirstOrDefaultAsync(u => u.Email == loginViewModel.Email && u.Password == loginViewModel.Password);
 
