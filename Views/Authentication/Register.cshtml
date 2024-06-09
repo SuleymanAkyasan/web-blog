@@ -1,6 +1,6 @@
 ﻿@using webdersi.Models.ViewModels
 
-@model LoginViewModel
+@model RegisterViewModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <!--Stylesheet-->
     <style media="screen">
+
         /* tüm eleanların elementleri (pseudo-elementler)*/
         *,
         *:before,
@@ -26,18 +27,15 @@
         body {
             background-color: #080710;
         }
-
         /* div'in özellikleri */
         .background {
             width: 430px;
             height: 520px;
             position: absolute;
-            transform: translate(-50%,-50%); /* Elemanın kendisini, genişliğinin ve yüksekliğinin yarısı kadar sola ve yukarıya kaydırır.
-                                         */
-            top: 50%; /* üst kenarını, ana elemanın yüksekliğinin ortasına yerleştirir */
-            left: 50%; /* sol kenarını, ana elemanın genişliğinin ortasına yerleştirir */
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
         }
-
             /* container içindeki shape class'ının özelliği */
             .background .shape {
                 height: 200px;
@@ -45,7 +43,6 @@
                 position: absolute;
                 border-radius: 50%;
             }
-
         /* yuvarlak tasarımın özellikleri */
         .shape:first-child {
             background: linear-gradient( #1845ad, #23a2f6 );
@@ -61,19 +58,18 @@
 
         /* from ve inputların özellikleri*/
         form {
-            height: 470px;
+            height: 520px;
             width: 400px;
             background-color: rgba(255,255,255,0.13);
             position: absolute; /* belge akışında nasıl yerleştirileceğini */
-            transform: translate(-50%,-50%); /* Elemanın kendisini, genişliğinin ve yüksekliğinin yarısı kadar sola ve yukarıya kaydırır.
-                                 */
+            transform: translate(-50%,-50%); /* Elemanın kendisini, genişliğinin ve yüksekliğinin yarısı kadar sola ve yukarıya kaydırır*/
             top: 50%; /* üst kenarını, ana elemanın yüksekliğinin ortasına yerleştirir */
             left: 50%; /* sol kenarını, ana elemanın genişliğinin ortasına yerleştirir */
             border-radius: 10px;
             backdrop-filter: blur(10px); /* arka planın nasıl görüntüleneceği */
             border: 2px solid rgba(255,255,255,0.1); /* kenarlarını tanımlamak için */
             box-shadow: 0 0 40px rgba(8,7,16,0.6); /* gölge eklemek için */
-            padding: 50px 35px;
+            padding: 45px 35px;
         }
 
             form * {
@@ -83,7 +79,6 @@
                 outline: none;
                 border: none;
             }
-
             /* from içindeki başlıların özellikleri */
             form h3 {
                 font-size: 32px;
@@ -116,7 +111,6 @@
         ::placeholder {
             color: #e5e5e5;
         }
-
         /* buton özellikleri */
         button {
             margin-top: 50px; /* üstten boşluk */
@@ -128,27 +122,6 @@
             font-weight: 600; /* metnin kalınlığı*/
             border-radius: 5px; /*köşelerini yuvarlatmak için */
             cursor: pointer;
-        }
-
-        /* Ekstra küçük cihazlar (telefonlar, 576px ve daha küçük) */
-        media (max-width: 575.98px) {
-            .background
-
-        {
-            width: 90%; /* Ekranın genişliğinin %90'ı kadar olacak */
-            height: auto; /* Yükseklik otomatik ayarlanacak */
-            padding: 20px; /* Formun iç kenar boşluğunu ayarla */
-        }
-
-        form {
-            width: 100%; /* Formun genişliği %100 olacak */
-            padding: 30px 20px; /* Form iç kenar boşluğunu ayarla */
-        }
-
-        button {
-            margin-top: 30px; /* Butonun üst boşluğunu ayarla */
-        }
-
         }
 
         /* Küçük cihazlar (tabletler, 768px ve daha küçük) */
@@ -181,6 +154,7 @@
             margin-top: 70px; /* Formun üst boşluğunu ayarla */
             /* Diğer stiller */
         }
+
     </style>
 </head>
 <body>
@@ -188,31 +162,24 @@
         <div class="shape"></div>
         <div class="shape"></div>
 
-        <form asp-controller="Authentication" asp-action="Login" method="post">
-            <h3>Giriş Yap</h3>
+        <form aspasp-controller="Authentication" asp-action="Register" method="post">
+            <h3>Kayıt Ol</h3>
 
             <div>
                 <label asp-for="Email">Email</label>
-                <input asp-for="Email" placeholder="Email adresiniz" id="username">
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <input asp-for="Email" placeholder="Emailiniz" id="email">
+                <span class="text-danger"></span>
             </div>
 
             <div>
                 <label asp-for="Password">Şifre</label>
                 <input asp-for="Password" placeholder="Şifreniz" id="password" type="password">
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <span class="text-danger"></span>
             </div>
 
-            <br />
+            <button type="submit">Kayıt Ol</button>
 
-            <button type="submit">Giriş Yap</button>
         </form>
     </div>
-
-    @section Scripts {
-        @{
-            await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
-    }
 </body>
 </html>
